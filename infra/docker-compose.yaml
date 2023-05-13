@@ -10,8 +10,9 @@ services:
     env_file:
       - .env
   web:
-    build:
-      context: ../api_yamdb
+    image: akacarlson/infra_web:latest
+    #build:
+    #  context: ../api_yamdb
     restart: always
     volumes:
       - api_yamdb_static:/app/static
