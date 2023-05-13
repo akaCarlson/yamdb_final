@@ -77,10 +77,9 @@ class ReviewViewSet(viewsets.ModelViewSet):
     lookup_field = 'id'
 
     def get_queryset(self):
-        queryset = Review.objects.all().filter(
+        return Review.objects.all().filter(
             title_id=self.kwargs.get('title_id'),
         ).order_by('id')
-        return queryset
 
     def perform_create(self, serializer):
         title = get_object_or_404(Title, id=self.kwargs.get('title_id'))

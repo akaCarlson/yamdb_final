@@ -1,5 +1,5 @@
-from django.utils import timezone
 from django.core.exceptions import ValidationError
+from django.utils import timezone
 
 
 def validate_year(value):
@@ -8,7 +8,7 @@ def validate_year(value):
         raise ValidationError(
             'Значение больше текущего года!'
         )
-    elif value < 1900:
+    if value < 1900:
         raise ValidationError(
             'Значения меньше 1900 не допускаются!'
         )
