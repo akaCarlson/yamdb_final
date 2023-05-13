@@ -2,24 +2,23 @@ import secrets
 import string
 from http import HTTPStatus
 
-from django.db.models import Avg
 from django.contrib.auth import authenticate
 from django.core.mail import send_mail
+from django.db.models import Avg
 from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
+from reviews.models import Category, Genre, Review, Title, User
 from rest_framework import (exceptions, filters, permissions, views,
                             viewsets)
 from rest_framework.decorators import action
+from rest_framework.exceptions import MethodNotAllowed
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 from rest_framework_simplejwt.serializers import RefreshToken
-from rest_framework.exceptions import MethodNotAllowed
 
-from reviews.models import Category, Genre, Review, Title, User
 from .filters import TitleFilter
 from .permissions import Everyone, IsAdminOrSuperuser, IsUser, IsModerator
-
 from .serializers import (CategorySerializer, CommentSerializer,
                           GenreSerializer, ReviewSerializer,
                           TitleCreateSerializer, TitleListSerializer,
