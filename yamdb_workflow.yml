@@ -24,7 +24,8 @@ jobs:
               run: |
                 python -m flake8
                 cd api_yamdb/
-                python manage.py test
+                python manage.py pytest
+                pytest
     build_and_push_web_to_docker_hub:
         runs-on: ubuntu-latest
         needs: initial_tests
