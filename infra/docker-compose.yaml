@@ -3,8 +3,6 @@ version: '2.2'
 services:
   db:
     image: postgres:13.0-alpine
-    ports:
-      - "5432:5432"
     volumes:
       - /var/lib/postgresql/data/
     env_file:
