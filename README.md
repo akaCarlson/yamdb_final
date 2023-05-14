@@ -1,3 +1,4 @@
+[![Yamdb workflow](https://github.com/akaCarlson/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)](https://github.com/akaCarlson/yamdb_final/actions/workflows/yamdb_workflow.yml)
 # api_yamdb
 В данном проекте реализованы api запросы GET, POST, PUT, PATCH, DELETE
 Авторизация реализована через simplejwt Token (с подтверждением через email).
