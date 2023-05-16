@@ -16,24 +16,24 @@
 - Doker *(дистрибутивы и инструкции по установке: https://docs.docker.com/engine/install/)*
 
 ### 1. Клонировать репозиторий:
-- git clone https://github.com/akaCarlson/infra_sp2.git
+- git clone https://github.com/akaCarlson/yamdb_final.git
 
 ### 2. Cоздать и запустить контейнеры:
-- В терминале перейти в папку \infra_sp2\infra
+- В терминале перейти в папку \yamdb_final\infra
 - Запустить команду: docker-compose up *(создает и запускает контейнеры)*
     Будут развернуты и запущены три контейнера:
         ✔ Container infra-db-1
         ✔ Container infra-web-1
         ✔ Container infra-nginx-1
 - Провести первичную настройку и выполнить миграции:
-    - В терминале из папки \infra_sp2\infra запустить команды:
+    - В терминале из папки \yamdb_final\infra запустить команды:
         - docker-compose exec web python manage.py migrate *(создает структуру данных в БД)*
         - docker-compose exec web python manage.py createsuperuser *(создает суперпользователя)*
         - docker-compose exec web python manage.py collectstatic --no-input *(настраивает работы со статикой)*
 - Сервис будет доступен на 80 порту
 - Спецификация API: http://127.0.0.1/redoc/
 - Консоль администратора: http://127.0.0.1/admin
-- Email с кодом подтверждения для регистрации пользователей будут располагаться в контейнере web по адресу app/sent_emails. Для доступа к коду подтверждения, выполнить команды из папки \infra_sp2\infra:
+- Email с кодом подтверждения для регистрации пользователей будут располагаться в контейнере web по адресу app/sent_emails. Для доступа к коду подтверждения, выполнить команды из папки \yamdb_final\infra:
     - docker-compose exec web bash *(подключиться к терминалу контейнера web)*
     - cd sent_emails
     - ls *(посмотреть все отправленные email)*
@@ -41,7 +41,7 @@
     - exit *(выйти из терминала контейнера)*
 
 ### 3. Работа с тестовыми данными:
-- CSV с тестовыми данными расположены в папке \infra_sp2\api_yamdb\api_yamdb\static
+- CSV с тестовыми данными расположены в папке \yamdb_final\api_yamdb\api_yamdb\static
 - В терминале из папки \infra_sp2\infra запустить команды:
     - docker-compose exec web python manage.py runscript load *(загрузка тестовых данных)*
     - docker-compose exec web python manage.py runscript unload *(удаление ранее загруженных тестовых данных)*
