@@ -7,6 +7,7 @@
 - db - postgres:13.0-alpine
 - web - python:3.7-slim
 - nginx - nginx:1.21.3-alpine
+
 Адрес сервера для автодеплоя: carlson.sytes.net
 
 
