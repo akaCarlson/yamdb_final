@@ -56,4 +56,4 @@
 ###### 3. GET, POST к жанрам\ категориям /api/v1/genres/ \ /api/v1/categories/
 ###### 4. GET, POST к отзывам /api/v1/titles/1/reviews/
 ###### 5. GET, POST к комментариям /api/v1/titles/1/reviews/1/comments
-###### 6. Документация по api доступна по ссылке http://127.0.0.1/redoc/
+###### 6. Документация по api доступна по ссылке http://carlson.sytes.net/redoc/
